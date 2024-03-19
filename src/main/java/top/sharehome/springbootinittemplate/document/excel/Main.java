@@ -23,7 +23,7 @@ public class Main {
         File file = new File("D:/temp.xxx");
         String path = file.getPath();
 
-        ArrayList<ExcelUser> excelUsers = new ArrayList<>() {
+        ArrayList<ExcelUser> excelUsers = new ArrayList<ExcelUser>() {
             {
                 for (int i = 0; i < 20; i++) {
                     add(new ExcelUser(1767110638703833090L, "admin" + i, "admin", "test1", "https://www.baidu.com", "admin", LocalDateTime.now(), LocalDateTime.now(), 0));
