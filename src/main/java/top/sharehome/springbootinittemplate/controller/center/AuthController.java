@@ -1,4 +1,4 @@
-package top.sharehome.springbootinittemplate.controller;
+package top.sharehome.springbootinittemplate.controller.center;
 
 import cn.dev33.satoken.annotation.SaCheckLogin;
 import org.apache.commons.lang3.StringUtils;

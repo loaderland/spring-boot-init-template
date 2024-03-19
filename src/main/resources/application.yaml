@@ -255,10 +255,17 @@ spring:
       #password:
   # MySQL配置
   datasource:
-    driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
-    url: jdbc:shardingsphere:classpath:mysql/mysql.yaml
+    center:
+      driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
+      jdbc-url: jdbc:shardingsphere:classpath:mysql/center.yaml
+
+    warehouse:
+      driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
+      jdbc-url: jdbc:shardingsphere:classpath:mysql/warehouse.yaml
     # HikariCP连接池配置（性能较好，模板首选【dataSourceClassName: com.zaxxer.hikari.HikariDataSource】）
     hikari:
+      #      datasource:
+      #        center:
       # 连接池名称
       pool-name: HikariCP
       # 连接池最小连接数量
@@ -474,22 +481,22 @@ easy-es:
   enable: false
   # es连接地址+端口 格式必须为ip:port,如果是集群则可用逗号隔开
   address: 127.0.0.1:9200
-  # 如果无账号密码则可不配置此行
-  #username:
-  # 如果无账号密码则可不配置此行
-  #password:
-  # 多数据源
-  #dynamic:
+    # 如果无账号密码则可不配置此行
+    #username:
+    # 如果无账号密码则可不配置此行
+    #password:
+    # 多数据源
+    #dynamic:
     #datasource:
-      #ds1:
-        #address: 127.0.0.1:9201
-        # 如果无账号密码则可不配置此行
-        #username:
-        # 如果无账号密码则可不配置此行
-        #password:
-        #...（以下配置和单数据源类似）
-      #ds2:
-        #...（以下配置和ds1相似）
+    #ds1:
+    #address: 127.0.0.1:9201
+    # 如果无账号密码则可不配置此行
+    #username:
+    # 如果无账号密码则可不配置此行
+    #password:
+  #...（以下配置和单数据源类似）
+  #ds2:
+  #...（以下配置和ds1相似）
   # 默认为http 可缺省
   schema: http
   # 默认为true 打印banner 若您不期望打印banner,可配置为false
